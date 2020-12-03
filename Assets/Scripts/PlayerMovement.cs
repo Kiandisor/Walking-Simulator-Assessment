@@ -4,37 +4,64 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    // Player Properties
+    public CharacterController player_controller;
     public uint player_speed = 10;
-    public uint rotation_speed = 5;
+    public float jump_height = 5F;
 
-    // Start is called before the first frame update
-    void Start()
+    // Gravity Properties
+    public float gravity = -9.81F;
+    Vector3 player_velocity;
+
+    // Ground Detection
+    public Transform ground_check;
+    public float ground_distance = 0.4F;
+    public LayerMask ground_mask;
+    bool is_grounded;
+
+    private void reset_velocity() 
     {
-        
+        if(is_grounded && player_velocity.y <0) {
+            player_velocity.y=-2F;
+		}
     }
+
+    private void player_jump()
+	{
+		if(Input.GetButtonDown("Jump") && is_grounded) {
+            player_velocity.y=Mathf.Sqrt(jump_height*-2*gravity);
+		}
+	}
     
-    // !Check the input of the player and move the object
-    void check_input() 
-    {
-		if (Input.GetKey(KeyCode.W)) {
-            gameObject.transform.Translate(Vector3.forward*Time.deltaTime*player_speed);
-        }
-		if (Input.GetKey(KeyCode.A)) {
-			gameObject.transform.Translate(Vector3.left*Time.deltaTime*player_speed);
-        }
-		if (Input.GetKey(KeyCode.S)) {
-			gameObject.transform.Translate(Vector3.back*Time.deltaTime*player_speed);
-        }
-		if (Input.GetKey(KeyCode.D)) { 
-			gameObject.transform.Translate(Vector3.right*Time.deltaTime*player_speed);
-        }
-		if (Input.GetKey(KeyCode.E)) { }
-    }
+    private void player_move()
+	{
+		// Get the X and Z position
+        float X_pos = Input.GetAxis("Horizontal");
+        float Z_pos = Input.GetAxis("Vertical");
 
-    // Update is called once per frame
-    void Update()
+        Vector3 move_to = transform.right*X_pos+transform.forward*Z_pos;
+
+        player_controller.Move(move_to * player_speed * Time.deltaTime);
+	}
+
+    private void gravity_drag_down()
+	{
+		// Gravity
+        player_velocity.y+=gravity*Time.deltaTime;
+        player_controller.Move(player_velocity * Time.deltaTime);
+	}
+
+	// Update is called once per frame
+	void Update()
     {
-        check_input();        
-    }
+        is_grounded=Physics.CheckSphere(ground_check.position,ground_distance,ground_mask);
+
+        reset_velocity();
+
+        player_move();
+        
+        player_jump();
+
+        gravity_drag_down();
+	}
 }
