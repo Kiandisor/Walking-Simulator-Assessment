@@ -5,38 +5,7 @@ Walking Simulator
 -------------------------------
 Crossplatform Development
 -------------------------------
-Document Index:
 
-0.0 Brief Game Overview
-0.1 Considerations
-0.2 Links
-0.3 Game Concept
-0.4 Game Cornerstones
-0.5 Gameplay
-0.6 Controls
-	0.5.1 PC
-	0.5.2 Phone
-1.0 Game Mechanics
-1.1 Player
-	1.1.1 Player Movement
-1.2 Items
-1.3 Puzzles
-	1.3.1 Puzzle Concepts
-1.4 Environment
-2.0 Assets List
-2.1 Environment
-2.2 Items
-2.3 Buildings
-3.0 GUI Mockups
-3.1 Menu Mockups
-	3.1.1 PC
-	3.1.2 Phone
-3.2 HUD Mockups
-	3.2.1 PC
-	3.2.2 Phone
-3.3 Screen size and aspect ration difference
-4.0 Timeline/Schedule
-----------------------------------------------------------
 0.0 Brief Game Overview
 
 	0.1 Considerations
