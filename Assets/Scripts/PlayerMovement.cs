@@ -19,7 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask ground_mask;
     bool is_grounded;
 
-    private void reset_velocity() 
+    private Transform camera_position;
+
+	private void Start()
+	{
+        camera_position=GetComponentInChildren<Camera>().transform;
+	}
+
+	private void reset_velocity() 
     {
         if(is_grounded && player_velocity.y <0) {
             player_velocity.y=-2F;
@@ -39,7 +46,16 @@ public class PlayerMovement : MonoBehaviour
         float X_pos = Input.GetAxis("Horizontal");
         float Z_pos = Input.GetAxis("Vertical");
 
-        Vector3 move_to = transform.right*X_pos+transform.forward*Z_pos;
+        Vector3 temp_foward = camera_position.forward;
+        Vector3 temp_right = camera_position.right;
+
+        temp_foward.y=0.0F;
+        temp_right.y=0.0F;
+
+        temp_foward.Normalize();
+        temp_right.Normalize();
+
+        Vector3 move_to = temp_right*X_pos+temp_foward*Z_pos;
 
         player_controller.Move(move_to * player_speed * Time.deltaTime);
 	}
