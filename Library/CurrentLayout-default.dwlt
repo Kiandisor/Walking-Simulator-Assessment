@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 79
+  controlID: 114
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 80
+  controlID: 115
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 81
+  controlID: 116
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -330,9 +330,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b44c0000
-    m_LastClickedID: 19636
-    m_ExpandedIDs: 00000000e246000000ca9a3b
+    m_SelectedIDs: 3c420000
+    m_LastClickedID: 16956
+    m_ExpandedIDs: 000000000442000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e2460000
+    m_ExpandedIDs: 0000000004420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,23 +508,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 70460000
-      m_LastClickedID: 18032
-      m_ExpandedIDs: 5ee5ffff74e9ffff704600009c460000a8460000
+      m_SelectedIDs: da300000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 60fbffff8841000094410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Test Collectables
-        m_OriginalName: Test Collectables
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 18032
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -570,9 +570,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 93.135956, y: -0.37333345, z: 81.7306}
+    m_Target: {x: 94.41069, y: 2.8885572, z: 82.15636}
     speed: 2
-    m_Value: {x: 93.135956, y: -0.37333345, z: 81.7306}
+    m_Value: {x: 94.41069, y: 2.8885572, z: 82.15636}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -619,13 +619,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.17579196, y: -0.6015299, z: 0.13787116, w: -0.766979}
+    m_Target: {x: -0.044971123, y: 0.11901009, z: -0.0053966152, w: -0.9918628}
     speed: 2
-    m_Value: {x: -0.17579141, y: -0.60152805, z: 0.13787073, w: -0.7669766}
+    m_Value: {x: -0.044970974, y: 0.119009696, z: -0.005396597, w: -0.99185944}
   m_Size:
-    m_Target: 6.9247465
+    m_Target: 10.065605
     speed: 2
-    m_Value: 6.9247465
+    m_Value: 10.065605
   m_Ortho:
     m_Target: 0
     speed: 2
