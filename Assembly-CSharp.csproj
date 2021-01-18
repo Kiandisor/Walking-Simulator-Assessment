@@ -138,11 +138,14 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\crystal_manager.cs" />
 =======
     <Compile Include="Assets\Scripts\MovementPuzzle.cs" />
     <Compile Include="Assets\Scripts\JumpInteract.cs" />
 >>>>>>> parent of 494e800e... Adding back changes
+=======
+>>>>>>> parent of d884e5ad... Start of jumping puzzle
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
