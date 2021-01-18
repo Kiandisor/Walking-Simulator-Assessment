@@ -10,7 +10,7 @@ public class crystal_manager : MonoBehaviour
 {    
     public static crystal_manager _crystal_manager;
 
-    private readonly List<GameObject> crystals = new List<GameObject>();
+    private List<GameObject> crystals = new List<GameObject>();
     private List<collect_status> crystal_status = new List<collect_status>();
 
 	private void Awake()
@@ -29,7 +29,11 @@ public class crystal_manager : MonoBehaviour
         //Set GameManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
 
-        var objects = FindObjectsOfType<Crystal>();
+        initialise_lists();
+	}
+
+    private void initialise_lists() { 
+		var objects = FindObjectsOfType<Crystal>();
 
         foreach(var obj in objects) {
             if(obj.tag =="Collectables") {
@@ -37,22 +41,22 @@ public class crystal_manager : MonoBehaviour
                 crystal_status.Add(collect_status.not_collected);
 			}
         } 
-    }
-
-    private void initialise_lists() { 
-            }
+	}
     
     public static void change_collected_status(GameObject obj, collect_status update_status_to) 
     {
-        for(int i = 0; i<_crystal_manager.crystals.Count;i++) {
-            if(_crystal_manager.crystals[i] == obj) {
-                _crystal_manager.crystal_status[i]=update_status_to;
-			}
-		} 
+        var i =_crystal_manager.crystals.FindIndex(list_obj => list_obj == obj);
+        _crystal_manager.crystal_status[i]=update_status_to;
     }
 
     public static int collected_amount()
 	{
         return _crystal_manager.crystal_status.Count(obj => obj==collect_status.collected);
+	}
+
+    public static void late_add(GameObject obj, collect_status status)
+	{
+        _crystal_manager.crystals.Add(obj);
+        _crystal_manager.crystal_status.Add(status);
 	}
 }
