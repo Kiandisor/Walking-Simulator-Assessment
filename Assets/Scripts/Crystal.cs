@@ -13,8 +13,8 @@ public class Crystal : Interactable
 	public override void interact()
 	{
 		Debug.Log("Crystal");
+		crystal_manager.change_collected_status(gameObject,collect_status.collected);
 		gameObject.SetActive(false);
-		GameManager.manager.set_active_object(gameObject,false);
 	}
 
 	// Update is called once per frame

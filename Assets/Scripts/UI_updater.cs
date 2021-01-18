@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
-public class UIManager : MonoBehaviour
+public class UI_updater : MonoBehaviour
 {
     public Text gem_text;
     private int gems_aquired = 0;
@@ -13,12 +14,17 @@ public class UIManager : MonoBehaviour
         gem_text.text+=gems_aquired;
     }
 
+    private void update_text() 
+    {
+        gems_aquired=crystal_manager.collected_amount();
+
+        gem_text.text="Gems: "+gems_aquired.ToString();
+    }
+
+    
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.manager.active_count()>gems_aquired) {
-            gems_aquired++;
-            gem_text.text+=gems_aquired;
-        }
+        update_text();
     }
 }
