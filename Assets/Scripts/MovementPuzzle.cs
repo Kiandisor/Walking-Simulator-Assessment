@@ -22,7 +22,7 @@ public class MovementPuzzle : MonoBehaviour
     
     private void check_platforms()
 	{
-		for (int i = 0;i<=platforms.Count;++i) {
+		for (int i = 0;i<platforms.Count;++i) {
             if (player_controller.is_touching(platforms[i])) {
                 platforms_touched[i].interact();
             }

@@ -65,11 +65,6 @@ public class PlayerMovement : MonoBehaviour
 		// Gravity
         player_velocity.y+=gravity*Time.deltaTime;
         player_controller.Move(player_velocity * Time.deltaTime);
-	}	
-
-    public bool is_touching(GameObject obj)
-	{
-        return Physics.CheckSphere(obj.transform.position,ground_distance);
 	}
 
 	// Update is called once per frame
