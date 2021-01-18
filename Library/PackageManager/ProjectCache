@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637462748447345674
+      ticks: 637465527388893069
     m_Hash: 2207233161
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -2845,7 +2845,7 @@ m_PackageAssets:
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/Graphics.git
+        url: git+https://github.com/Unity-Technologies/Graphics.git
         revision: 680e3b6121fc7d4cb8b99c2b59c74233ace4c49b
         path: 
     - packageId: com.unity.shadergraph@8.3.1
