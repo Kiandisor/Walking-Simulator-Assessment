@@ -1967,7 +1967,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.939064, y: 7.665035, z: 11.120033}
   m_LocalScale: {x: 1, y: 1, z: 1}
-<<<<<<< Updated upstream
   m_Children:
   - {fileID: 861084477}
   - {fileID: 1843284039}
