@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    List<GameObject> collectables = new List<GameObject>();
-
     public static GameManager manager = new GameManager();
+
+    public List<GameObject> collectables = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
