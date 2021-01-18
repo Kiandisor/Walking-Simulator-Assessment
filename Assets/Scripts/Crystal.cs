@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Crystal : Interactable
 {
@@ -13,6 +11,8 @@ public class Crystal : Interactable
 	public override void interact()
 	{
 		Debug.Log("Crystal");
+		crystal_manager.change_collected_status(gameObject,collect_status.collected);
+		gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
