@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game_Scene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Main Menu.unity
+    guid: f097399c3b62b4a4db32b6c9476bedb2
+  - enabled: 1
+    path: Assets/Scenes/Main Game Scene.unity
+    guid: 08cbd28b40285b0479c44cfd38ad88e3
+  - enabled: 1
+    path: Assets/Scenes/Cave Maze.unity
+    guid: 51bd7dfcefa3604499bbec0df35ba05e
   m_configObjects: {}

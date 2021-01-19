@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Collectables
+  - Light Switch
+  - Basic Switch
+  - Manager
+  - Button
   layers:
   - Default
   - TransparentFX
