@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['pitch_9',['pitch',['../class_unity_template_projects_1_1_simple_camera_controller_1_1_camera_state.html#ab331842253f91e09b2560559518184d4',1,'UnityTemplateProjects::SimpleCameraController::CameraState']]],
-  ['positionlerptime_10',['positionLerpTime',['../class_unity_template_projects_1_1_simple_camera_controller.html#a036fd7d0359c4010f5f1f667d782e429',1,'UnityTemplateProjects::SimpleCameraController']]]
+  ['inactivecrystal_19',['InactiveCrystal',['../class_inactive_crystal.html',1,'']]],
+  ['inputs_20',['inputs',['../struct_declarations_1_1inputs.html',1,'Declarations']]],
+  ['interact_21',['interact',['../class_crystal.html#acd6cfbd4dbf23ef62970415e48b36aa0',1,'Crystal.interact()'],['../class_hidden_crystal.html#a6ee08578106c1b1f9c51098f39db48bf',1,'HiddenCrystal.interact()'],['../classbutton.html#a1db151e82800840247913b17a5b30afd',1,'button.interact()'],['../class_interactable.html#a0a60563e0c1415c0d7616c9a626f4c22',1,'Interactable.interact()'],['../class_object_toggle.html#ac4f010af1f21d2774ae65c6765bd5f13',1,'ObjectToggle.interact()']]],
+  ['interactable_22',['Interactable',['../class_interactable.html',1,'']]]
 ];

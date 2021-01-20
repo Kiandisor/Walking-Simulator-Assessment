@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Class that handles setting up the camera, locking the mouse to the middle of the screen and rotating with mouse movement  */
 public class MouseCameraMove : MonoBehaviour
 {
-    public Transform player_body; // Position of the player body
+    public Transform player_body; /*!< Position of the player body */
 
-    public float mouse_speed = 10F; // Player mouse speed
-    public float X_rotation = 0F; // Default rotation on the X axis
+    public float mouse_speed = 10F; /*!< Player mouse speed */
+    public float X_rotation = 0F; /*!< Default rotation on the X axis */
 
     // Start is called before the first frame update
 	void Start()
@@ -15,7 +16,7 @@ public class MouseCameraMove : MonoBehaviour
         Cursor.lockState=CursorLockMode.Locked; // Lock the cursor to the centre of the screen
 	}
 
-	// Update is called once per frame
+	/** Update is called once per frame. Sets the current rotation to the position to the mouse */
 	void Update()
     {
         float mouse_X = Input.GetAxis(Declarations.inputs._mouse_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse

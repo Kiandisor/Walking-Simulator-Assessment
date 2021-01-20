@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 
+/** Main player class that manages the user input */
 public class PlayerMovement : MonoBehaviour
 {
-    // Player Properties
-    public CharacterController player_controller;
-    public uint player_speed = 10;
-    public float jump_height = 5F;
+    /** Player Properties */
+    public CharacterController player_controller; /*!< Current player position */
+    public uint player_speed = 10; /*!< Base move speed for the player */
+    public float jump_height = 5F; /*!< Bade jumping height for the player */
 
-    // Gravity Properties
-    public float gravity = -9.81F;
-    Vector3 player_velocity;
+    /** Gravity Properties */
+    public float gravity = -9.81F; /*!< Pull of the gravity to bring the player to the ground */
+    private Vector3 player_velocity; /*!< Current player velocity */
 
-    // Ground Detection
-    public Transform ground_check;
-    public float ground_distance = 0.4F;
-    public LayerMask ground_mask;
-    bool is_grounded;
+    /** Ground Detection */
+    public Transform ground_check; /*!< Posision of the object to check if the player is on the ground */
+    public float ground_distance = 0.4F; /*!< Base distance between the player and the ground */
+    public LayerMask ground_mask; /*!< Mask of the object for the physics check */
+    private bool is_grounded; /*!< State of whether the player is on the ground or not */
 
-    private Transform camera_position;
+    private Transform camera_position; /*!< Current camera position */
 
+    /** Set the camera position to the camera attached to the player object */
 	private void Start()
 	{
         camera_position=GetComponentInChildren<Camera>().transform;
 	}
 
+    /** Check and reset the players velocity if the player is on the ground */
 	private void reset_velocity() 
     {
         if(is_grounded && player_velocity.y <0) {
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 		}
     }
 
+    /** Check if the jump button is pressed and the player is grounded to make the player jump */
     private void player_jump()
 	{
 		if(Input.GetButtonDown(Declarations.inputs._jump_button) && is_grounded) {
@@ -38,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
     
+    /** Move the player through the Character_Controller */
     private void player_move()
 	{
 		// Get the X and Z position
@@ -58,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         player_controller.Move(move_to * player_speed * Time.deltaTime);
 	}
 
+    /** Pull the player back down to the ground */
     private void gravity_drag_down()
 	{
 		// Gravity
@@ -65,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         player_controller.Move(player_velocity * Time.deltaTime);
 	}
 
-	// Update is called once per frame
+	/** Update is called once per frame. Updates the current position of the player in the world */
 	void Update()
     {
         is_grounded=Physics.CheckSphere(ground_check.position,ground_distance,ground_mask);

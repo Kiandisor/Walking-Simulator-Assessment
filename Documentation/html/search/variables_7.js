@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_47',['z',['../class_unity_template_projects_1_1_simple_camera_controller_1_1_camera_state.html#a63ed2ebd40760cb58867bff52b2eeab9',1,'UnityTemplateProjects::SimpleCameraController::CameraState']]]
+  ['x_5frotation_80',['X_rotation',['../class_mouse_camera_move.html#a585f6b05ecbdd871203af1b1c69acbbb',1,'MouseCameraMove']]]
 ];

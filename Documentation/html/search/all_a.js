@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['translate_16',['Translate',['../class_unity_template_projects_1_1_simple_camera_controller_1_1_camera_state.html#af09a1ed9339d0221870048eade23c8d5',1,'UnityTemplateProjects::SimpleCameraController::CameraState']]]
+  ['mouse_5fspeed_28',['mouse_speed',['../class_mouse_camera_move.html#adab0e94d195807344333530344bbc32e',1,'MouseCameraMove']]],
+  ['mousecameramove_29',['MouseCameraMove',['../class_mouse_camera_move.html',1,'']]]
 ];

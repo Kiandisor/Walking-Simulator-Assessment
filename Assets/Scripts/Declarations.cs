@@ -34,4 +34,17 @@ namespace Declarations {
 		public static string _forest_level = "Level 1";
 		public static string _cave_level = "Level 2";
 	}
+
+	/* Crystal Manager */
+
+	/** State for the crystals being collected */
+	public enum collect_status { collected, not_collected }
+
+	/** Time that the crystal was added to the crystal manager */
+	public enum created_time { start, late }
+
+	/* Button Manager */
+
+	/** State for the buttons being pressed or not */
+	public enum pressed { no,yes }
 }

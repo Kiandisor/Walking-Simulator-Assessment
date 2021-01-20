@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boost_0',['boost',['../class_unity_template_projects_1_1_simple_camera_controller.html#a10837e7d6130729fa1a3aacf83e40f99',1,'UnityTemplateProjects::SimpleCameraController']]]
+  ['_5fcrystal_5fmanager_0',['_crystal_manager',['../classcrystal__manager.html#abc722b14dd010b73581299223f118db5',1,'crystal_manager']]]
 ];

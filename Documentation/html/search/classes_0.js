@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['camerastate_24',['CameraState',['../class_unity_template_projects_1_1_simple_camera_controller_1_1_camera_state.html',1,'UnityTemplateProjects::SimpleCameraController']]]
+  ['button_42',['button',['../classbutton.html',1,'']]],
+  ['button_5fmanager_43',['button_manager',['../classbutton__manager.html',1,'']]]
 ];

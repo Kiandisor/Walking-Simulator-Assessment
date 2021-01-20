@@ -1,25 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/** Specialised crystal which handles the game object starting off as inactive */
 public class HiddenCrystal : Crystal
 {
-    private bool has_been_collected = false;
+    private bool has_been_collected = false; /*!< Internal state of the object being collected or not which decides if the gameObject can re-appear */
 
-    // Start is called before the first frame update
+    /** Start is called before the first frame update. Adds the crystal to the crystal manager as a late addition */
     void Awake()
     {
 		Start();
 		crystal_manager.late_add(gameObject,collect_status.not_collected);
     }
 
+	/** Overriden interact function which calls the base crystal interact and mark the object as collected internally */
 	public override void interact()
 	{
 		base.interact();
 		has_been_collected=true;
 	}
 
-	// Update is called once per frame
+	/** Update is called once per frame. Mouse input will vary based the status of the object being collected or not */
 	void Update()
 	{
 		if (has_been_collected==false) {
