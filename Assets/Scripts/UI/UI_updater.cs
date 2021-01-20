@@ -4,8 +4,9 @@ using UnityEngine.UI;
 /**  */
 public class UI_updater : MonoBehaviour
 {
-    public Text gem_text; /*!< Reference to a text object in the UI */
-    private int gems_aquired = 0; /*!< Internal count of the gems collected */
+    public Text    gem_text; /*!< Reference to a text object in the UI */
+    private int    gems_aquired = 0; /*!< Internal count of the gems collected */
+    private int    total_gems   = 0; /*!< Internal count of the gems collected */
 
     private string base_text = "Gems: "; /*! Base UI text */
 
@@ -13,6 +14,7 @@ public class UI_updater : MonoBehaviour
     void Start()
     {
         gem_text.text+=gems_aquired;
+        total_gems=crystal_manager.crystal_count();
     }
 
     /** Get the current collected gems from the crystal manager and add it to the UI text object */
@@ -20,7 +22,7 @@ public class UI_updater : MonoBehaviour
     {
         gems_aquired=crystal_manager.collected_amount();
 
-        gem_text.text=base_text+gems_aquired.ToString();
+        gem_text.text=base_text+$"{gems_aquired}/{total_gems}";
     }
 
     

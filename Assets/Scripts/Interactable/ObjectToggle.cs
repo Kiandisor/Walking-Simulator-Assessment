@@ -4,9 +4,9 @@ using UnityEngine;
 /** Script which handles toggling objects in the scripts list of GameObjects on and off when interacted with */
 public class ObjectToggle : Interactable
 {
-    public List<GameObject> objects = new List<GameObject>(); /*!< List of GameObjects that can be modified in the unity editor */
+    public List<GameObject> objects    = new List<GameObject>(); /*!< List of GameObjects that can be modified in the unity editor */
 
-    private bool is_toggled = false; /*!< Check if the object the script is attached to has been toggled */
+    private bool            is_toggled = false; /*!< Check if the object the script is attached to has been toggled */
 
     // Start is called before the first frame update
     void Start()

@@ -3,16 +3,16 @@ using UnityEngine;
 
 
 /** Manager class for buttons in the game scene with functions that can be used staticly to modify the data of the manager */
-public class button_manager : MonoBehaviour
+public class button_manager : BaseManager 
 {
-    public static button_manager _button_manager;
+    public static button_manager       _button_manager;
 
-    private List<GameObject> buttons = new List<GameObject>(); /*!< GameObjects of all the buttonss in the scene */
+    private List<GameObject>           buttons      = new List<GameObject>(); /*!< GameObjects of all the buttonss in the scene */
     private List<Declarations.pressed> button_state = new List<Declarations.pressed>();
 
     private void Awake()
     {
-        // If there is not already an instance of GameManager, set it to this.
+		// If there is not already an instance of GameManager, set it to this.
         if (_button_manager==null) {
             _button_manager=this;
         }
@@ -21,15 +21,12 @@ public class button_manager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //Set GameManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        DontDestroyOnLoad(gameObject);
-
-        initialise_lists();
+        initialise_data();
     }
 
-    private void initialise_lists() 
+    public override void initialise_data() 
     {
-        var buttons_in_scene = FindObjectsOfType<button>();
+        var buttons_in_scene = FindObjectsOfType<game_button>();
         foreach(var obj in buttons_in_scene) {
             if (obj.tag==Declarations.tags._button) {
                 buttons.Add(obj.gameObject);

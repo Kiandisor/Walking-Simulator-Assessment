@@ -9,7 +9,6 @@ public class HiddenCrystal : Crystal
     void Awake()
     {
 		Start();
-		crystal_manager.late_add(gameObject,collect_status.not_collected);
     }
 
 	/** Overriden interact function which calls the base crystal interact and mark the object as collected internally */
