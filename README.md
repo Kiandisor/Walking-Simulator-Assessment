@@ -35,9 +35,9 @@ Crossplatform Development
 		0.5.1 PC
 			- PC would use W/S/A/D and the right mouse button to control the player.
 			- The E key will be used to interact with objects
-		0.5.2 Phone
-			- On the phone the player will be able to move around with a joystick and rotate the head with the gyro movement.
-			- Tapping on an object will allow the player to interact with the object 
+		0.5.2 PS4
+			- On the PS4 the player will be able to move around with the left joystick and rotate the head with the right joystick.
+			- Tapping X while looking at an object will allow the player to interact with the object 
 
 0.2 Game Requirements
 
@@ -110,13 +110,13 @@ Crossplatform Development
 
 		3.1.1 PC
 
-		3.1.2 Phone
+		3.1.2 PS4
 
 	3.2 HUD Mockups
 
 		3.2.1 PC
 
-		3.2.2 Phone
+		3.2.2 PS4
 
 	3.3 Screen size and aspect ratio difference
 
@@ -145,8 +145,7 @@ Crossplatform Development
 	Week 7:
 		- Puzzle Five or Puzzle Clues
 	Week 8:
-		- Phone Controls
+		- PS4 Controls
 		- Extras
 
-	* Phone controls will be added depending on when its done in class
-	** TBD based off if there are more puzzles
+	* TBD based off if there are more puzzles
