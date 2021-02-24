@@ -18,7 +18,9 @@
 
 		public const string _jump_button  = "Jump";
 		public const string _mouse_x_axis = "Mouse X";
+		public const string _joystick_x_axis = "Right JoyStick X";
 		public const string _mouse_y_axis = "Mouse Y";
+		public const string _joystick_y_axis = "Right JoyStick Y";
 	}
 
 	public struct buttons 

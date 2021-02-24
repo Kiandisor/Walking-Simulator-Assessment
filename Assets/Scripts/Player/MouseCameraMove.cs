@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class MouseCameraMove : MonoBehaviour
     public float mouse_speed = 10F; /*!< Player mouse speed */
     public float X_rotation = 0F; /*!< Default rotation on the X axis */
 
+    private float mouse_X = 0.0F;
+    private float mouse_Y = 0.0F;
+
     // Start is called before the first frame update
 	void Start()
 	{
@@ -19,9 +23,13 @@ public class MouseCameraMove : MonoBehaviour
 	/** Update is called once per frame. Sets the current rotation to the position to the mouse */
 	void Update()
     {
-        float mouse_X = Input.GetAxis(Declarations.inputs._mouse_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse
-        float mouse_Y = Input.GetAxis(Declarations.inputs._mouse_y_axis) * mouse_speed * Time.deltaTime; // Current Y position of mouse
-        
+#if UNITY_WIN
+        mouse_X = Input.GetAxis(Declarations.inputs._mouse_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse
+        mouse_Y = Input.GetAxis(Declarations.inputs._mouse_y_axis) * mouse_speed * Time.deltaTime; // Current Y position of mouse
+#elif UNITY_PS4
+        float mouse_X = Input.GetAxis(Declarations.inputs._joystick_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse
+        float mouse_Y = Input.GetAxis(Declarations.inputs._joystick_y_axis) * mouse_speed * Time.deltaTime; // Current Y position of mouse
+#endif
         // Clamp the X rotation to be between 90 and -90
         X_rotation-=mouse_Y;
         X_rotation=Mathf.Clamp(X_rotation,-90F,90F);
