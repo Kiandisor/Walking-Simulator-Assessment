@@ -34,10 +34,10 @@ Crossplatform Development
 	0.6 Controls
 		0.5.1 PC
 			- PC would use W/S/A/D and the right mouse button to control the player.
-			- The E key will be used to interact with objects
-		0.5.2 PS4
-			- On the PS4 the player will be able to move around with the left joystick and rotate the head with the right joystick.
-			- Tapping X while looking at an object will allow the player to interact with the object 
+			- Left click will be used to interact with objects
+		0.5.2 Android
+			- On the phone the player will be able to move around with the left joystick and rotate the head with the right joystick.
+			- Tapping the object while looking at it will allow the player to interact with the object 
 
 0.2 Game Requirements
 
@@ -110,13 +110,13 @@ Crossplatform Development
 
 		3.1.1 PC
 
-		3.1.2 PS4
+		3.1.2 Android
 
 	3.2 HUD Mockups
 
 		3.2.1 PC
 
-		3.2.2 PS4
+		3.2.2 Android
 
 	3.3 Screen size and aspect ratio difference
 
@@ -145,7 +145,7 @@ Crossplatform Development
 	Week 7:
 		- Puzzle Five or Puzzle Clues
 	Week 8:
-		- PS4 Controls
+		- Android Controls
 		- Extras
 
 	* TBD based off if there are more puzzles
