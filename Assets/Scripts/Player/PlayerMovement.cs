@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 /** Main player class that manages the user input */
 public class PlayerMovement : MonoBehaviour
 {
     /** Player Properties */
     public CharacterController player_controller; /*!< Current player position */
+
+#if UNITY_ANDROID
+    public Joystick player_joystick; /*!< Joystick for the mobile movement */
+    public Button phone_jump_button; /*!< Button for the mobile  */
+#endif
+
     public uint player_speed = 10; /*!< Base move speed for the player */
     public float jump_height = 5F; /*!< Bade jumping height for the player */
 
@@ -24,7 +31,10 @@ public class PlayerMovement : MonoBehaviour
 	private void Start()
 	{
         camera_position=GetComponentInChildren<Camera>().transform;
-	}
+#if UNITY_ANDROID
+        phone_jump_button.onClick.AddListener(apply_jump);
+#endif
+    }
 
     /** Check and reset the players velocity if the player is on the ground */
 	private void reset_velocity() 
@@ -34,21 +44,35 @@ public class PlayerMovement : MonoBehaviour
 		}
     }
 
+    private void apply_jump()
+	{
+		player_velocity.y=Mathf.Sqrt(jump_height*-2*gravity);
+	}
     /** Check if the jump button is pressed and the player is grounded to make the player jump */
     private void player_jump()
 	{
-		if(Input.GetButtonDown(Declarations.inputs._jump_button) && is_grounded) {
-            player_velocity.y=Mathf.Sqrt(jump_height*-2*gravity);
-		}
+#if UNITY_STANDALONE_WIN
+        if(Input.GetButtonDown(Declarations.inputs._jump_button) && is_grounded) {
+            apply_jump();
+        }
+#elif UNITY_ANDROID
+        //if (phone_jump_button.FindSelectableOnDown()) {
+        //    // phone_jump_button.onClick.Invoke();
+        //}
+#endif
 	}
     
     /** Move the player through the Character_Controller */
     private void player_move()
 	{
-		// Get the X and Z position
+#if UNITY_STANDALONE_WIN
+        // Get the X and Z position
         float X_pos = Input.GetAxis(Declarations.positions._horizontal_axis);
         float Z_pos = Input.GetAxis(Declarations.positions._vertical_axis);
-
+#elif UNITY_ANDROID
+		float X_pos = player_joystick.Direction.x;
+        float Z_pos = player_joystick.Direction.y;
+#endif
         Vector3 temp_foward = camera_position.forward;
         Vector3 temp_right = camera_position.right;
 

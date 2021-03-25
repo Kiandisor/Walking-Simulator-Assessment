@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /** Class that handles setting up the camera, locking the mouse to the middle of the screen and rotating with mouse movement  */
 public class MouseCameraMove : MonoBehaviour
 {
     public Transform player_body; /*!< Position of the player body */
+
+#if UNITY_ANDROID
+    public Joystick camera_joystick; /*!< Joystick to control the camera*/
+#endif
 
     public float mouse_speed = 10F; /*!< Player mouse speed */
     public float X_rotation = 0F; /*!< Default rotation on the X axis */
@@ -17,18 +18,20 @@ public class MouseCameraMove : MonoBehaviour
     // Start is called before the first frame update
 	void Start()
 	{
+#if UNITY_STANDALONE_WIN
         Cursor.lockState=CursorLockMode.Locked; // Lock the cursor to the centre of the screen
+#endif
 	}
 
 	/** Update is called once per frame. Sets the current rotation to the position to the mouse */
 	void Update()
     {
-#if UNITY_WIN
+#if UNITY_STANDALONE_WIN
         mouse_X = Input.GetAxis(Declarations.inputs._mouse_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse
         mouse_Y = Input.GetAxis(Declarations.inputs._mouse_y_axis) * mouse_speed * Time.deltaTime; // Current Y position of mouse
-#elif UNITY_PS4
-        float mouse_X = Input.GetAxis(Declarations.inputs._joystick_x_axis) * mouse_speed * Time.deltaTime; // Current X position of mouse
-        float mouse_Y = Input.GetAxis(Declarations.inputs._joystick_y_axis) * mouse_speed * Time.deltaTime; // Current Y position of mouse
+#elif UNITY_ANDROID
+        mouse_X = camera_joystick.Direction.x * mouse_speed * Time.deltaTime; // Current X position of mouse
+        mouse_Y = camera_joystick.Direction.y * mouse_speed * Time.deltaTime; // Current Y position of mouse
 #endif
         // Clamp the X rotation to be between 90 and -90
         X_rotation-=mouse_Y;

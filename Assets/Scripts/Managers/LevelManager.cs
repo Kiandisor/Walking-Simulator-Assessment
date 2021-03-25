@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+#if UNITY_EDITOR_WIN
 using UnityEditor;
-using UnityEngine;
+#endif
 using UnityEngine.SceneManagement;
 
 
@@ -26,17 +27,20 @@ public class LevelManager : BaseManager
 
         initialise_data();
     }
-    
+
+#if UNITY_EDITOR_WIN
     /** Add levels to the dictionary */
     public override void initialise_data() 
     {
         int level_index = 0;
+
         foreach(var scene in EditorBuildSettings.scenes) {
 			scenes.Add($"Level {level_index}",scene.path);
 			level_index++;
 		}
     }
-    
+#endif
+
     /** Change the scene for to one in the build by using the path to search for the scene
      * @param Level_Name name of the key in the dictionary
      */

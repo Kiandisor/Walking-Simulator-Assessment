@@ -33,9 +33,8 @@
 
 	public struct levels
 	{
-		public const string _main_menu    = "Level 0";
-		public const string _forest_level = "Level 1";
-		public const string _cave_level   = "Level 2";
+		public const string _main_menu    = "Main Menu";
+		public const string _forest_level = "Main Game Scene";
 	}
 
 	public struct scene_names 
