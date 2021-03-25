@@ -39,11 +39,15 @@ Crossplatform Development
 			- On the phone the player will be able to move around with the left joystick and rotate the head with the right joystick.
 			- Tapping the object while looking at it will allow the player to interact with the object 
 
-0.2 Game Requirements
+0.1 Game Requirements
 
 	0.2.1 API/Software Requirements
 
 	0.2.2 Tools, API and methods use for crossplatform issues
+
+0.2 Environmental Considerations
+
+	There are no real environmental considerations to take into account for either PC or Android however some common sense should be used still when picking a place to play the game when on mobile to not be at any risk from anything around you.
 
 1.0 Game Mechanics
 
@@ -105,20 +109,15 @@ Crossplatform Development
 		https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-fantasy-house-31856
 3.0 GUI Mockups
 
-	3.1 Menu Mockups
-		Below are the menu on each platform, it will simply have a start and quit button but will change depending on the platforms limits:
-
-		3.1.1 PC
-
-		3.1.2 Android
-
-	3.2 HUD Mockups
+	3.1 HUD Mockups
 
 		3.2.1 PC
 
 		3.2.2 Android
 
 	3.3 Screen size and aspect ratio difference
+
+	There are noticable screen size differences when it comes to playing on the PC compared to a mobile which change the aspect ratio of the games depending on the platform. It is important to make sure that the UI of the game is scaled properly so that elements are not hidden off the viewing area of the respective screen.
 
 4.0 Timeline/Schedule
 
